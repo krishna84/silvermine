@@ -1,0 +1,21 @@
+<div class="row">
+   <div class="top-col">
+      <div class="flex-items">
+         <div class="flex-item-left" 
+         *ngFor="let lot of parkingLots; let i = index;" 
+         (click)="changeLot(lot)"
+         [ngStyle]="{background : lot.color}"
+         [class.selected]="lot.lot === selectedLot.lot"
+         [class.show]=""
+          >
+           {{lot.lot}}
+         </div>
+       </div> 
+   </div>
+</div>
+
+<app-parking-category [slots]="selectedLot.slots" (change)="getRow($event)"></app-parking-category>
+<div class="mLft">
+   <button type="button" class="btnBlueGreen addico" (click)="openDialog()">Add Parking Slot <i class="fa fa-plus" aria-hidden="true"></i>
+   </button>
+</div>

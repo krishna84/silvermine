@@ -1,0 +1,22 @@
+<div class="row">
+   <div class="top-col">
+      <table class="table">
+         <tr>
+            <th>Park slot No</th>
+            <th>Booking Status</th>
+            <th>Booked By</th>
+            <th>Parking category</th>
+            <th>Booking Time and Date</th>
+            <th>Delete Slot</th>
+         </tr>
+         <tr *ngFor="let slot of slots">
+            <td>{{slot.slotId}}</td>
+            <td>{{slot.status}}</td>
+            <td>{{slot.bookedBy}}</td>
+            <td>{{slot.category}}</td>
+            <td>{{slot.date}}</td>
+            <td><i class="fa fa-trash-o" aria-hidden="true" (click)="deleteRow(slot.slotId)"></i></td>
+         </tr>       
+      </table>
+   </div>
+</div>

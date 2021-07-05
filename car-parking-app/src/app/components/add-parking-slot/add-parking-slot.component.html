@@ -1,0 +1,58 @@
+
+ <h1 mat-dialog-title>PARKING DETAILS</h1>
+<div mat-dialog-content>
+  <!-- <p>What's your favorite animal?</p> -->
+<form  [formGroup]="roleForm" (ngSubmit)="saveRole()">
+<!-- <div>
+  <mat-form-field appearance="fill">
+    <mat-label>Parking Slot Number</mat-label>
+    <input type="number" matInput formControlName="slotNumber">
+  </mat-form-field>
+</div> -->
+<div>
+   <mat-form-field appearance="fill">
+    <mat-label>Parking Category</mat-label>
+    <mat-select matInput formControlName="category">
+       <mat-option value="Women">
+         Women
+       </mat-option>
+       <mat-option value="Accessibility">
+         Accessibility
+        </mat-option>
+        <mat-option value="Elderly">
+         Elderly
+        </mat-option>
+        <mat-option value="General">
+         General 
+        </mat-option>
+     </mat-select>
+  </mat-form-field>
+ </div>
+<div>
+  <mat-form-field appearance="fill">
+   <mat-label>Booking Status</mat-label>
+   <mat-select  matInput formControlName="bookingStatus">
+      <mat-option value="Booked">
+        Booked
+      </mat-option>
+      <mat-option value="Not Booked">
+         Not Booked
+       </mat-option>
+    </mat-select>
+ </mat-form-field>
+</div>
+<div>
+   <mat-form-field appearance="fill">
+     <mat-label>Booked by</mat-label>
+     <input matInput formControlName="bookedBy">
+   </mat-form-field>
+ </div>
+
+
+</form>
+</div>
+
+<div mat-dialog-actions class="flr">
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="saveRole()" cdkFocusInitial>Ok</button>
+</div>
