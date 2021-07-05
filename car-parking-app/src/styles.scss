@@ -60,7 +60,7 @@
     width: 100%;
     th{
        text-align: center;
-       background: #d9d9d5;
+       background: #a4e1a0;
        padding:10px 0;
        font-size: 13px;
     }
@@ -71,6 +71,7 @@
        i{
          font-size: 18px;
          cursor: pointer;
+         color: #ff4081;
        }
     }
     tr:nth-child(even) {background: #f0f7f7 }
@@ -124,4 +125,12 @@
 }
 .show{
    display: none;
+}
+.mat-dialog-title {
+   margin: 0 0 20px;
+   display: block;
+   background: #00AE68;
+   color: #fff;
+   padding-left: 10px;
+   font-family: 'Open Sans', sans-serif;
 }
