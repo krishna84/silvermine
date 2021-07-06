@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { ParkingLotsComponent } from './components/parking-lots/parking-lots.component';
 import { ParkingCategoryComponent } from './components/parking-category/parking-category.component';
 import { AddParkingSlotComponent } from './components/add-parking-slot/add-parking-slot.component';
+import { ParkingService } from './parking.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import { AddParkingSlotComponent } from './components/add-parking-slot/add-parki
      MatButtonToggleModule,
      ReactiveFormsModule
   ],
-  providers: [],
+   providers: [
+      ParkingService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

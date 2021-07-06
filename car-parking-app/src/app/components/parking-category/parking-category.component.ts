@@ -8,6 +8,7 @@ import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angu
 export class ParkingCategoryComponent implements OnInit, OnChanges {
 
    @Input() slots = [];
+   @Input() showMessage;
    @Output() change = new EventEmitter();
 
   constructor() { }
@@ -24,8 +25,10 @@ export class ParkingCategoryComponent implements OnInit, OnChanges {
               this.slots.splice(i,1);
           }
       }
-      console.log('this.slots.length', this.slots.length);
-      this.change.emit(this.slots.length);
+      if (this.slots.length === 0) {
+         this.showMessage = true;
+      } 
+      this.change.emit(this.showMessage);
   }
    
 }

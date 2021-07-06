@@ -13,18 +13,9 @@
    <mat-form-field appearance="fill">
     <mat-label>Parking Category</mat-label>
     <mat-select matInput formControlName="category">
-       <mat-option value="Women">
-         Women
+       <mat-option *ngFor="let cat of allCategories" value="{{cat.category}}">
+         {{cat.category}}
        </mat-option>
-       <mat-option value="Accessibility">
-         Accessibility
-        </mat-option>
-        <mat-option value="Elderly">
-         Elderly
-        </mat-option>
-        <mat-option value="General">
-         General 
-        </mat-option>
      </mat-select>
   </mat-form-field>
  </div>
@@ -53,6 +44,6 @@
 </div>
 
 <div mat-dialog-actions class="flr">
-  <button mat-button color="accent" (click)="onNoClick()">No Thanks</button>
+  <button mat-button color="accent" (click)="onNoClick()">Close</button>
   <button mat-button color="primary" (click)="saveRole()" cdkFocusInitial>Ok</button>
 </div>

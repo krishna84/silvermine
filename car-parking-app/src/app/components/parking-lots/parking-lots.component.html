@@ -14,7 +14,7 @@
    </div>
 </div>
 
-<app-parking-category [slots]="selectedLot.slots" (change)="getRow($event)"></app-parking-category>
+<app-parking-category [slots]="selectedLot.slots" [showMessage]="showMessage" (change)="getRow($event)"></app-parking-category>
 <div class="mLft">
    <button type="button" class="btnBlueGreen addico" (click)="openDialog()">Add Parking Slot <i class="fa fa-plus" aria-hidden="true"></i>
    </button>

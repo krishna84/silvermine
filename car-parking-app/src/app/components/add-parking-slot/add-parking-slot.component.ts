@@ -1,6 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import * as moment from 'moment';
 import { FormBuilder, FormGroup, FormArray, Validators, AbstractControl, FormControl } from '@angular/forms';
+import { ParkingService } from '../../parking.service';
 
 @Component({
   selector: 'app-add-parking-slot',
@@ -9,12 +11,16 @@ import { FormBuilder, FormGroup, FormArray, Validators, AbstractControl, FormCon
 })
 export class AddParkingSlotComponent implements OnInit {
    roleForm: FormGroup;
+   date = moment().format('lll');
+   allCategories: any = [];
    constructor(
       private fb: FormBuilder,
+      service : ParkingService,
       public dialogRef: MatDialogRef<AddParkingSlotComponent>,
       @Inject(MAT_DIALOG_DATA) public data,
    ) {
       this.dialogRef.disableClose = true;
+      this.allCategories = service.getParkingService();
    }
 
    ngOnInit(): void {
@@ -36,7 +42,7 @@ export class AddParkingSlotComponent implements OnInit {
          status: this.roleForm.controls.bookingStatus.value,
          bookedBy: this.roleForm.controls.bookedBy.value,
          category: this.roleForm.controls.category.value,
-         date : '12/12/12 8:30'
+         date : this.date
       });
     }
    

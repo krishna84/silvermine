@@ -16,7 +16,10 @@
             <td>{{slot.category}}</td>
             <td>{{slot.date}}</td>
             <td><i class="fa fa-trash-o" aria-hidden="true" (click)="deleteRow(slot.slotId)"></i></td>
-         </tr>       
+         </tr> 
+         <tr *ngIf="showMessage">
+            <td colspan="6">No Slots Selected this category</td> 
+         </tr>      
       </table>
    </div>
 </div>
